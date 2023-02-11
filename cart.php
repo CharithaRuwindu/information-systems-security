@@ -215,7 +215,7 @@ $deskripsi = implode('<br>',$deskripsi_explode);
             
             
         
-     <input type="hidden" name="md5item" value="<?php echo $md5item; ?>" >
+     <input type="hidden" name="md5item" value="<?php echo htmlspecialchars($md5item, ENT_QUOTES, 'UTF-8');?>">
           
             <p>Jumlah Barang :</p>
             <input class="inputkuwkwk" type="number" name="jumlah_pesanan" placeholder="contoh: 1" required>
