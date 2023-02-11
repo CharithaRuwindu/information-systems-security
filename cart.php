@@ -186,7 +186,7 @@ $deskripsi = implode('<br>',$deskripsi_explode);
   
   <tr>
     <td>Kode Barang</td>
-    <td><input class="inputkerenhebatgg" value="<?php  echo htmlspecialchars($md5item); //echo $md5item; ?>" disabled></td>
+    <td><input class="inputkerenhebatgg" value="<?php  echo echo $md5item; ?>" disabled></td>
       <tr>
     <td>Harga</td>
     <td><?php echo rupiah($harga_barang); ?></td>
