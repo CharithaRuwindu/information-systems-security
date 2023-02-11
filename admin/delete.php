@@ -36,7 +36,21 @@ file_put_contents($path_data,$stringgg);
 
 
 
-unlink("../database/image/$blacklist.png");
+//unlink("../database/image/$blacklist.png");
+
+$blacklist = filter_input(INPUT_GET, 'blacklist', FILTER_SANITIZE_STRING);
+
+// Whitelist the allowed characters in the filename
+$blacklist = preg_replace('/[^a-zA-Z0-9\.]/', '', $blacklist);
+
+// Concatenate the fixed path and filename
+$file = "../database/image/" . $blacklist . ".png";
+
+// Check if the file exists before trying to delete it
+if (file_exists($file)) {
+    unlink($file);
+}
+
 }
 else{
     $path_header = "login.php";
